@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Created Using Easy HTML v1.4.8 -->
+<!-- https://play.google.com/store/apps/details?id=ak.andro.easyhtml -->
+
+
+<html>
+<head>
+<title>text</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+  body {text-align: center;}
+  textarea {
+  position: relative;
+  left: 0px; 
+  top: 100px;
+  bottom: auto;
+    border-color:blue;
+    color:green;
+    border-radius:5%;
+    box-shadow: 0px 4px 8px 0px rgba(0,250,0,0.8);
+    }
+    textarea:hover {
+      box-shadow: 0 8px 16px 0 rgba(255,250,0,0.8);
+      }
+    input[type="reset"] {
+      font-size:25px;
+      font-weight:100;
+      box-shadow:1px 2px 1px 2px rgba(230,230,0,0.5);
+      text-align:center;
+      margin-top:110px;
+      margin-left:150px;
+      background-color:hsla(220,20%,20%,0.5)
+        color:yellow;
+      }
+    .dark-mode{background-color:black;
+      color:yellow;
+    transition:2s;
+    font-size:50px;}
+  </style>
+<link rel="stylesheet" href="./style.css">
+</head><br>
+<body>
+  <form>
+<textarea id="myTextarea" placeholder="Write here..." rows="15" cols="32" 
+          style=background-color:#99FFFF;></textarea>
+  <br>
+  <input type="reset" onclick="alert('You reset text box')"; value="Clear"></form>
+  <br>
+  <button onclick=alert("Hello");>click</button>
+  <button onclick="myFunction()">Dark mode</button>
+  <button onclick="getElementById('date')
+                   .innerHTML=Date()">What is
+    the time</button>
+  <button onclick="downloadTextarea()">Download</button>
+  <p id="date"></p>
+  <script>
+  function myFunction() {
+    let element=document.body;
+    element.classList.toggle("dark-mode");
+    }
+  </script>
+  <script>
+    function downloadTextarea() {
+      var textarea = document.getElementById("myTextarea");
+      var content = textarea.value;
+      var blob = new Blob([content], {type: "text/plain"});
+      var url = URL.createObjectURL(blob);
+      var link = document.createElement("a");
+      link.href = url;
+      link.download = "Textarea.txt";
+      link.click();
+    }
+  </script>
+<script src="./script.js"></script>
+</body>
+  
+</html>
